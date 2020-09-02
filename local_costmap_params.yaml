@@ -56,18 +56,12 @@ local_costmap:
         clearing: true
         min_obstacle_height: 0.0 # take just a slice to avoid spurious obstacles
         max_obstacle_height: 0.4
-    floor: 
-        data_type: PointCloud2
-        topic: /camera/depth/color/points
-        marking: false
-        clearing: true
-        min_obstacle_height: 0.0 # here we can use the floor visibility...
-        max_obstacle_height: 0.25
+
 
   static_layer:
     map_topic: /map
     subscribe_to_updates: true
-    lethal_cost_threshold: 60
+    lethal_cost_threshold: 100
 
 
   plugins:

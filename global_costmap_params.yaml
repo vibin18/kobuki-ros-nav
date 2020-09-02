@@ -1,20 +1,10 @@
-#global_costmap:
-#   global_frame: map
-#   robot_base_frame: base_footprint
-#   update_frequency: 1.0
-#   publish_frequency: 0.5
-#   static_map: true
-#   transform_tolerance: 0.5
-#   plugins:
-#     - {name: static_layer,            type: "costmap_2d::StaticLayer"}
-#     - {name: obstacle_layer,          type: "costmap_2d::VoxelLayer"}
-#     - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
+
 global_costmap:
   global_frame: map
-  static_map: false
+  static_map: true
 #  static_map: true
   robot_base_frame: base_footprint
-  rolling_window: true
+  rolling_window: false
 #  rolling_window: false
   width: 28.0
   height: 20.0
@@ -27,23 +17,37 @@ global_costmap:
 
   static_layer:
     track_unknown_space: true
+    subscribe_to_updates: true
+    lethal_cost_threshold : 100
     enabled:              true
     map_topic:            "/map"
 
   inflation_layer:
     enabled:              true
-    cost_scaling_factor:  23 
+    cost_scaling_factor:  28 
     inflation_radius:     5  
     track_unknown_space: true
 
   obstacle_layer:
     enabled: true
-    observation_sources: laser_scan_sensor
-    laser_scan_sensor: {sensor_frame: laser_frame, data_type: LaserScan, topic: scan,  obstacle_range: 6.0, raytrace_range: 8.5, clearing: true, marking: true}
-    subscribe_to_updates: true
-    max_obstacle_height: 3
-    track_unknown_space: true
-#    always_send_full_costmap: true
+    observation_sources: laser_scan_sensor cloud
+    laser_scan_sensor: 
+      sensor_frame: laser_frame
+      data_type: LaserScan
+      topic: scan
+      obstacle_range: 6.0
+      raytrace_range: 8.5
+      clearing: true
+      marking: true
+    cloud: 
+      data_type: PointCloud2
+      topic: /camera/depth/color/points
+      marking: true
+      clearing: true
+      min_obstacle_height: 0.0 # take just a slice to avoid spurious obstacles
+      max_obstacle_height: 0.4
+
+
 
   plugins:
    - {name: static_layer,type: "costmap_2d::StaticLayer"}
