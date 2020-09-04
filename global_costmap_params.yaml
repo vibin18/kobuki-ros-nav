@@ -13,7 +13,6 @@ global_costmap:
   update_frequency: 2.0
   publish_frequency: 1.0
   transform_tolerance: 0.8
-  robot_radius: 18
   footprint_padding: 0.04
 
 
