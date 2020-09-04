@@ -41,7 +41,7 @@ if __name__ == '__main__':
     # Create a SMACH state machine
     #sm = smach.StateMachine(outcomes=['FAILED', 'SUCESS'])
 
-    patrol = StateMachine(outcomes = ['entrance', 'kitchen']
+    patrol = StateMachine(outcomes = ['entrance', 'kitchen'])
     with patrol:
         StateMachine.add('KITCHEN',
             Waypoint(waypoint1[1]),
