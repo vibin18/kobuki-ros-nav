@@ -41,13 +41,13 @@ if __name__ == '__main__':
     # Create a SMACH state machine
     #sm = smach.StateMachine(outcomes=['FAILED', 'SUCESS'])
 
-    patrol = StateMachine('success')
+    patrol = StateMachine(outcomes = ['entrance', 'kitchen']
     with patrol:
-        StateMachine.add(waypoint1[0],
+        StateMachine.add('KITCHEN',
             Waypoint(waypoint1[1]),
             transitions={'success': 'entrance'})
-    with patrol:
-        StateMachine.add(waypoint2[0],
+
+        StateMachine.add('ENTRANCE',
             Waypoint(waypoint2[1]),
             transitions={'success': 'kitchen'})
     sis = smach_ros.IntrospectionServer('smach_server', patrol , '/SM_ROOT')
