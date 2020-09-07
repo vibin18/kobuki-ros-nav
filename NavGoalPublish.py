@@ -8,7 +8,7 @@ from math import radians, degrees
 from actionlib_msgs.msg import *
 from geometry_msgs.msg import Point
 
-parser = argparse.ArgumentParser(prog='PROG', usage='%(prog)s [options]')
+parser = argparse.ArgumentParser(prog='NavGoalPublish.py', usage='%(prog)s [xGoal yGoal]')
 parser.add_argument( 'xGoal', type=float, help='Goal x in float')
 parser.add_argument( 'yGoal', type=float, help='Goal y in float')
 args = parser.parse_args()
