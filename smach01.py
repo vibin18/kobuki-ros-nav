@@ -5,7 +5,11 @@ import actionlib
 import smach
 import smach_ros
 from smach import State,StateMachine
-from ./ import NavGoalPublish
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,currentdir) 
+import NavGoalPublish
 
 smach.State.__init__(NavGoalPublish, outcomes=['success', 'failed'])
 
