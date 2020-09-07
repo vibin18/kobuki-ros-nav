@@ -45,11 +45,11 @@ def move_to_goal(xGoal,yGoal):
 
         if(ac.get_state() ==  GoalStatus.SUCCEEDED):
                 rospy.loginfo("You have reached the destination")
-                return True
+                return 'success'
 
         else:
                 rospy.loginfo("The robot failed to reach the destination")
-                return False
+                return 'failed'
         
         
 
