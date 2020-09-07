@@ -50,8 +50,10 @@ def move_to_goal(xGoal,yGoal):
         else:
                 rospy.loginfo("The robot failed to reach the destination")
                 return False
-        rospy.init_node('patrol')
-        rospy.spin()
+        
+        
 
 if __name__ == '__main__':
+    rospy.init_node('patrol')
     move_to_goal(args.xGoal,args.yGoal)
+    rospy.spin()
