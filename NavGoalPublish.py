@@ -9,8 +9,8 @@ from actionlib_msgs.msg import *
 from geometry_msgs.msg import Point
 
 parser = argparse.ArgumentParser(prog='PROG', usage='%(prog)s [options]')
-parser.add_argument( xGoal, type=float, help='Goal x in float')
-parser.add_argument( yGoal, type=float, help='Goal y in float')
+parser.add_argument( 'xGoal', type=float, help='Goal x in float')
+parser.add_argument( 'yGoal', type=float, help='Goal y in float')
 
 
 #this method will make the robot move to the goal location
