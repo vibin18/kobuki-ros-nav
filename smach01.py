@@ -17,7 +17,7 @@ stateMachine1 = smach.StateMachine(outcomes=['FAILED'])
 
 with stateMachine1:
     StateMachine.add('KITCHEN',
-        NavGoalPublish(3.8  0.55),
+        NavGoalPublish(3.8 , 0.55),
         transitions={'success': 'ENTRANCE', 'failed' : 'FAILED' })
 
     StateMachine.add('ENTRANCE',
