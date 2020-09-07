@@ -11,7 +11,7 @@ from geometry_msgs.msg import Point
 parser = argparse.ArgumentParser(prog='PROG', usage='%(prog)s [options]')
 parser.add_argument( 'xGoal', type=float, help='Goal x in float')
 parser.add_argument( 'yGoal', type=float, help='Goal y in float')
-
+args = parser.parse_args()
 
 #this method will make the robot move to the goal location
 def move_to_goal(xGoal,yGoal):
@@ -54,4 +54,4 @@ def move_to_goal(xGoal,yGoal):
         rospy.spin()
 
 if __name__ == '__main__':
-    move_to_goal(xGoal,yGoal)
+    move_to_goal(args.xGoal,args.yGoal)
