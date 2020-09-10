@@ -1,10 +1,10 @@
 
 global_costmap:
   global_frame: map
-  static_map: false
+  static_map: true
 #  static_map: true
   robot_base_frame: base_footprint
-  rolling_window: true
+  rolling_window: false
 #  rolling_window: false
   width: 28.0
   height: 20.0
@@ -19,7 +19,7 @@ global_costmap:
 
   static_layer:
     track_unknown_space: true
-    subscribe_to_updates: true
+    subscribe_to_updates: false
     lethal_cost_threshold : 100
     enabled:              true
     map_topic:            "/map"
@@ -41,13 +41,7 @@ global_costmap:
       raytrace_range: 8.5
       clearing: true
       marking: false
-    cloud: 
-      data_type: PointCloud2
-      topic: /camera/depth/color/points
-      marking: false
-      clearing: true
-      min_obstacle_height: 0.0 # take just a slice to avoid spurious obstacles
-      max_obstacle_height: 0.4
+
 
 
 
