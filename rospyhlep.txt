@@ -1,0 +1,20 @@
+
+Behaviour:
+A Behaviour is the smallest element in a behaviour tree, i.e. it is the leaf. 
+Behaviours are usually representative of either a check (am I hungry?), or an action (buy some chocolate cookies).
+
+Composites: (Composites are the factories and decision makers of a behaviour tree. They are responsible for shaping the branches.)
+    Sequence: execute children sequentially
+    Selector: select a path through the tree, interruptible by higher priorities
+        A selector executes each of its child behaviours in turn until one of them succeeds (at which point it itself returns RUNNING or SUCCESS, 
+        or it runs out of children at which point it itself returns FAILURE. 
+        We usually refer to selecting children as a means of choosing between priorities.
+        Each child and its subtree represent a decreasingly lower priority path.
+
+    Chooser: like a selector, but commits to a path once started until it finishes
+    Parallel: manage children concurrently
+
+Trees:
+    While a graph of connected behaviours and composites form a tree in their own right (i.e. it can be initialised and ticked), 
+    it is usually convenient to wrap your tree in another class to take care of alot of the housework and
+    provide some extra bells and whistles that make your tree flourish.

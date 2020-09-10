@@ -7,6 +7,8 @@ local_costmap:
   static_map: false
   rolling_window: true
   footprint_padding: 0.02
+  width: 5.0
+  height: 5.0
   
 
 

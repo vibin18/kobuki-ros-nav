@@ -43,7 +43,7 @@ def move_to_goal(xGoal,yGoal):
 
         ac.wait_for_result(rospy.Duration(60))
 
-        if(ac.get_state() ==  GoalStatus.SUCCEEDED):
+        if(ac.get_state() ==  ac.GoalStatus.SUCCEEDED):
                 rospy.loginfo("You have reached the destination")
                 return 'success'
 
