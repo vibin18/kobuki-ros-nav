@@ -40,7 +40,7 @@ global_costmap:
       obstacle_range: 6.0
       raytrace_range: 8.5
       clearing: true
-      marking: true
+      marking: false
     cloud: 
       data_type: PointCloud2
       topic: /camera/depth/color/points
