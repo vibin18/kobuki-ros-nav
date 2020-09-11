@@ -23,4 +23,4 @@ local_costmap:
 
   obstacles_layer: 
     observation_sources: scan 
-    base_scan: {data_type: LaserScan, sensor_frame: laser_frame, clearing: true, marking: true, topic: scan}
+    scan: {data_type: LaserScan, sensor_frame: laser_frame, clearing: true, marking: true, topic: scan}
