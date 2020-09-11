@@ -37,7 +37,7 @@ TebLocalPlannerROS:
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 0.5
  obstacle_poses_affected: 3
- costmap_converter_plugin: "costmap_converter::CostmapToPolygonsDBSMCCH"
+ #costmap_converter_plugin: "costmap_converter::CostmapToPolygonsDBSMCCH"
  costmap_converter_spin_thread: True
  costmap_converter_rate: 5
 
