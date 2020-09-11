@@ -14,6 +14,7 @@
     <rosparam file="$(find move_base)/launch/teb_planner/costmap_common_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find move_base)/launch/teb_planner/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find move_base)/launch/teb_planner/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find move_base)/launch/teb_planner/move_base_params.yaml" command="load" />
 
     <rosparam file="$(find move_base)/launch/teb_planner/move_base_teb.yaml" command="load" />
     <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
