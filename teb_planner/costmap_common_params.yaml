@@ -1,7 +1,9 @@
 #---standard pioneer footprint---
 #---(in meters)---
 
-footprint_padding: 0.01
+footprint_model:
+   type: "point"
+
 
 transform_tolerance: 0.2
 map_type: costmap
@@ -10,8 +12,8 @@ always_send_full_costmap: true
 
 obstacle_layer:
  enabled: true
- obstacle_range: 3.0
- raytrace_range: 4.0
+ obstacle_range: 6.0
+ raytrace_range: 7.0
  inflation_radius: 0.2
  track_unknown_space: true
  combination_method: 1
