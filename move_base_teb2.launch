@@ -20,8 +20,8 @@
     <remap from="odom" to="$(arg odom_topic)"/>
 
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
-    <param name="controller_frequency" value="5.0" />
-    <param name="controller_patience" value="15.0" />
+    <param name="controller_frequency" value="3.0" />
+    <param name="controller_patience" value="20.0" />
     
     <param name="base_global_planner" value="global_planner/GlobalPlanner" />
 		<param name="planner_frequency" value="1.0" />
