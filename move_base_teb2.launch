@@ -3,7 +3,6 @@
   <!--arg name="cmd_vel_topic" default="/cmd_vel" /-->
 
   <arg name="cmd_vel_topic" default="/mobile_base/commands/velocity" />
-  <arg name="move_forward_only" default="true"/>
   <arg name="odom_topic" default="/camera/odom/sample" />
 
   <!-- move_base -->
@@ -19,7 +18,6 @@
     <rosparam file="$(find move_base)/launch/teb_planner/move_base_teb.yaml" command="load" />
     <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
     <remap from="odom" to="$(arg odom_topic)"/>
-    <param name="TebLocalPlannerROS/min_vel_x" value="0.0" if="$(arg move_forward_only)" />
 
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
     <param name="controller_frequency" value="5.0" />
