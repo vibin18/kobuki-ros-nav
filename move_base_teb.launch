@@ -1,0 +1,30 @@
+<launch>
+  <!-- Arguments -->
+  <!--arg name="cmd_vel_topic" default="/cmd_vel" /-->
+
+  <arg name="cmd_vel_topic" default="/mobile_base/commands/velocity" />
+  <arg name="move_forward_only" default="true"/>
+  <arg name="odom_topic" default="/camera/odom/sample" />
+
+  <!-- move_base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <!--param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" /-->
+    <!--param name="base_global_planner" value="carrot_planner/CarrotPlanner"/-->
+    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS"/>
+    <param name="controller_frequency" value="10.0" />
+    <!--param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/-->
+
+    <rosparam file="$(find move_base)/launch/teb_planner/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find move_base)/launch/teb_planner/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find move_base)/launch/teb_planner/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find move_base)/launch/teb_planner/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find move_base)/launch/teb_planner/move_base_params.yaml" command="load" />
+    <!--rosparam file="$(find turtlebot3_navigation)/param/dwa_local_planner_params_$(arg model).yaml" command="load" /-->
+    <rosparam file="$(find move_base)/launch/teb_planner/move_base_teb.yaml" command="load" />
+    <rosparam file="$(find move_base)/launch/teb_planner/worknow.yaml" command="load" />
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+    <param name="TebLocalPlannerROS/min_vel_x" value="0.0" if="$(arg move_forward_only)" />
+
+  </node>
+</launch>
