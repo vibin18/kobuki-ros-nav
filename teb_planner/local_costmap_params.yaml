@@ -7,7 +7,7 @@ local_costmap:
     - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
     - {name: sensor, type: "costmap_2d::ObstacleLayer"}
 
-  update_frequency: 5.0
+  update_frequency: 4.0
   publish_frequency: 2.0
   transform_tolerance: 2.0  
 
