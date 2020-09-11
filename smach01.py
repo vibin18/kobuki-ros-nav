@@ -70,15 +70,19 @@ class speak(State):
         else:
             while (self.client.get_state() !=  actionlib.GoalStatus.SUCCEEDED):
                 rospy.sleep(2.)
-                state = self.client.get_state()
-                if(state ==  actionlib.GoalStatus.PENDING):
+                
+                if(self.client.get_state()==  actionlib.GoalStatus.PENDING):
+                    rospy.sleep(2.)
                     rospy.loginfo("Speaking is pending")
-                elif(state == actionlib.GoalStatus.SUCCEEDED):
+                elif(self.client.get_state() == actionlib.GoalStatus.SUCCEEDED):
                     rospy.loginfo("End Say Success")
                     return 'success'
-                else:
+                elif:(self.client.get_state() == actionlib.GoalStatus.ABORTED):
                     rospy.loginfo("End Say Failed")
                     return 'failed'
+            else:
+                return 'success'
+
 
 
 
