@@ -3,7 +3,7 @@ raytrace_range: 3.5
 
 footprint: [[-0.205, -0.155], [-0.205, 0.155], [0.077, 0.155], [0.077, -0.155]]
 footprint_padding: 0.01
-#robot_radius: 0.17
+robot_radius: 0.18
 
 inflation_radius: 1.0
 cost_scaling_factor: 8.0
