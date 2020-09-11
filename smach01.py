@@ -93,7 +93,7 @@ if __name__ == '__main__':
 
     with stateMachine1:
         StateMachine.add('KITCHEN',
-            Waypoint([-1.118, 0.183]),
+            Waypoint([6.813, 1.325]),
             transitions={'success': 'SPEAK_KITCHEN', 'failed' : 'ENTRANCE' })
 
         StateMachine.add('SPEAK_KITCHEN',
@@ -101,11 +101,11 @@ if __name__ == '__main__':
             transitions={'success': 'ENTRANCE', 'failed' : 'FAILED' })
 
         StateMachine.add('ENTRANCE',
-            Waypoint([-3.928, 1.248]),
+            Waypoint([-1.118, 0.183]),
             transitions={'success': 'SPEAK_ENTRANCE', 'failed' : 'KITCHEN' })
 
         StateMachine.add('SPEAK_ENTRANCE',
-            speak(henna),
+            speak(entranceMatter),
             transitions={'success': 'KITCHEN', 'failed' : 'FAILED' })
 
     sis = smach_ros.IntrospectionServer('smach_server', stateMachine1 , '/SM_ROOT')
