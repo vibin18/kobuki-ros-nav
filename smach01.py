@@ -76,7 +76,7 @@ class speak(State):
                 elif(state == actionlib.GoalStatus.SUCCEEDED):
                     rospy.loginfo("End Say Success")
                     return 'success'
-                else
+                else:
                     rospy.loginfo("End Say Failed")
                     return 'failed'
 
