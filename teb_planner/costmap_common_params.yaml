@@ -1,8 +1,9 @@
 #---standard pioneer footprint---
 #---(in meters)---
 
-footprint_model:
+ footprint_model:
    type: "point"
+   radius: 0.16
 
 
 transform_tolerance: 0.2
