@@ -1,11 +1,6 @@
 #---standard pioneer footprint---
 #---(in meters)---
 
-footprint_model:
-  type: "circle"
-  radius: 0.16
-
-
 transform_tolerance: 0.2
 map_type: costmap
 
