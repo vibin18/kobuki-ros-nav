@@ -2,7 +2,7 @@
 #---(in meters)---
 
 footprint_model:
-  type: "point"
+  type: "circle"
   radius: 0.16
 
 
