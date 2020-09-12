@@ -30,7 +30,7 @@ TebLocalPlannerROS:
 
  footprint_model:
    type: "point"
-  #  radius: 0
+   radius: 0.16
 
  # GoalTolerance
     
